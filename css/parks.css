@@ -46,6 +46,8 @@ h1 {
 }
 
 #list {
+	font-size:12px;
+	
 	display:inline-block;
 	float:left;
 
@@ -71,4 +73,7 @@ h1 {
 	width:45%;
 	height:75%;
 	margin:3%;
+}
+
+.info-window {
 }

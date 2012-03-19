@@ -16,6 +16,7 @@ $(document).ready(function () {
 	$('#list li').each(function (i, elem) {
 		var park = $(this).find('a').html();
 
+		
 		// Create some HTML content for the info window
 		// Style the content in your CSS
 		var info = '<div class="info-window">'
@@ -32,12 +33,12 @@ $(document).ready(function () {
 		var marker = new google.maps.Marker({
 			position : pos
 			, map : map
-			, title : parks
+			, title : park
 			, icon : 'images/google-icon.png'
 			, animation: google.maps.Animation.DROP
 		});
 
-		// A function for showing this dinosaur's info window
+		// A function for showing this park's info window
 		function showInfoWindow (ev) {
 			if (ev.preventDefault) {
 				ev.preventDefault();
