@@ -62,6 +62,11 @@ h1 {
 	list-style-type:none;
 }
 
+.ratings {
+	float:left;
+	margin-right:2em;
+}
+
 #list li {
 	padding-bottom:6px;
 }

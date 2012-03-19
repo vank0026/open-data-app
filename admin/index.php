@@ -15,6 +15,8 @@ $results = $db->query('
 <head>
 <meta charset="utf-8">
 <title><?php if (isset($title)) { echo $title . ' � '; } ?>Comunity Gardens</title>
+<link href="css/parks.css" rel="stylesheet">
+
 <script src="js/modernizr.dev.js"></script>
 </head>
 

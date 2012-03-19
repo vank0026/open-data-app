@@ -1,6 +1,6 @@
 <?php
 
-require_once 'includes/filter-wrapper.php';
+require_once '../includes/filter-wrapper.php';
 
 
 $errors = array();
@@ -31,7 +31,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$errors['address'] = true;
 	}
 	if (empty($errors)){
-		require_once 'includes/db.php';
+		require_once '../includes/db.php';
 		
 		$sql = $db->prepare('
 			UPDATE parks
@@ -50,7 +50,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		exit;
 	}
 }else{
-	require_once 'includes/db.php';
+	require_once '../includes/db.php';
 	
 	$sql = $db->prepare('
 		SELECT id, park_name, longitude, latitude, address
@@ -75,8 +75,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <html>
 <head>
 <meta charset="utf-8">
-<title>Edit the Park</title>
-
+<title>Edit the Comunity Garden</title>
+<link href="css/parks.css" rel="stylesheet">
 
 </head>
 <body>

@@ -27,10 +27,18 @@ $results = $db->query('
 
 	<h1>Comunity Gardens List</h1>
 
-	<ul id="list">
-		<?php foreach ($results as $park) :?>
+<ul id="list">
+  <?php foreach ($results as $park) :?>
 			<li itemscope itemtype="http://schema.org/TouristAttraction">
-            	<div class="rate"><a href="">★</div>
+            
+                <div class="ratings">
+                    <span value="1"><a href="1">★</span>
+                    <span value="2"><a href="2">★</span>
+                    <span value="3"><a href="3">★</span>
+                    <span value="4"><a href="4">★</span>
+                    <span value="5"><a href="5">★</span>
+                </div>
+            
 				<a href="single.php?id=<?php echo $park['id']; ?>"><?php echo $park['park_name']; ?></a>
 				<span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
 				<meta itemprop="longitude" content="<?php echo $park['longitude']; ?>">
