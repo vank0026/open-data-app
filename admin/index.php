@@ -14,8 +14,8 @@ $results = $db->query('
 <html>
 <head>
 <meta charset="utf-8">
-<title>Parks Admin</title>
-
+<title><?php if (isset($title)) { echo $title . ' · '; } ?>Parks</title>
+<script src="js/modernizr.dev.js"></script>
 </head>
 
 <body>
@@ -35,6 +35,6 @@ $results = $db->query('
 			</li>
 		<?php endforeach; ?>
 	</ul>
-
+	<p><a href="../index.php">Back to Home Area</a></p>
 </body>
 </html>

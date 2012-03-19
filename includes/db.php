@@ -4,7 +4,7 @@
 
 $user = getenv('DB_USER');
 $pass = getenv('DB_PASS');
-$dsn = stripslashes(getenv('DB_DSN'));
+$dsn = getenv('DB_DSN');
 
 // open the connection to the database and stores it in a bariable
 $db = new PDO($dsn, $user, $pass);
