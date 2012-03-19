@@ -10,8 +10,6 @@ $results = $db->query('
 	ORDER BY park_name ASC');
 		// the tabs above are for easier usage, not needed for funcitonality
 		
-include 'includes/theme-top.php';
-
 ?>		
 
 
@@ -19,7 +17,7 @@ include 'includes/theme-top.php';
 <html>
 <head>
 <meta charset="utf-8">
-<title><?php if (isset($title)) { echo $title . ' · '; } ?>Parks</title>
+<title><?php if (isset($title)) { echo $title . ' ï¿½ '; } ?>Parks</title>
 <script src="js/modernizr.dev.js"></script>
 
 </head>

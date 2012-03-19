@@ -1,6 +1,6 @@
 <?php
 
-require_once 'includes/db.php';
+require_once '../includes/db.php';
 //	exect() allows us to perform SQL and not expect a result
 //	the query thing allows us to perform SQL the database, and get something back
 $results = $db->query('
@@ -14,7 +14,7 @@ $results = $db->query('
 <html>
 <head>
 <meta charset="utf-8">
-<title><?php if (isset($title)) { echo $title . ' · '; } ?>Parks</title>
+<title><?php if (isset($title)) { echo $title . ' ï¿½ '; } ?>Parks</title>
 <script src="js/modernizr.dev.js"></script>
 </head>
 
