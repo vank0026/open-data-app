@@ -1,6 +1,6 @@
 html{
 	background-color:#DEE9ED;
-	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-family:Verdana, Geneva, sans-serif;
 }
 
 body {
@@ -10,6 +10,7 @@ body {
 	height:800px;
 	
 	margin:2em auto;
+	padding:1%;
 	
 	-webkit-border-radius: 15px;
 	-moz-border-radius: 15px;
@@ -49,11 +50,18 @@ h1 {
 	float:left;
 
 	width:44%;
-	height:80%;
-	margin:2.5%;
+	height:75%;
+	margin:3%;
 	margin-right:0;
 	
+	padding:0;
+	
 	overflow-y:scroll;
+	list-style-type:none;
+}
+
+#list li {
+	padding-bottom:6px;
 }
 
 #map {
@@ -61,6 +69,6 @@ h1 {
 	float:right;
 	
 	width:45%;
-	height:80%;
-	margin:2.5%;
+	height:75%;
+	margin:3%;
 }

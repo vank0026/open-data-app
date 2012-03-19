@@ -23,12 +23,12 @@ $(document).ready(function () {
 			+ '</div>'
 		;
 
-		// Determine this dino's latitude and longitude
+		// Determine this park's latitude and longitude
 		var lat = $(this).find('meta[itemprop="latitude"]').attr('content');
 		var lng = $(this).find('meta[itemprop="longitude"]').attr('content');
 		var pos = new google.maps.LatLng(lat, lng);
 
-		// Create a marker object for this dinosaur
+		// Create a marker object for this park
 		var marker = new google.maps.Marker({
 			position : pos
 			, map : map
