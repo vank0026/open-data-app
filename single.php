@@ -39,7 +39,7 @@ if (empty($results)) {
 <head>
 <meta charset="utf-8">
 <title><?php echo $results['park_name']; ?> | Park</title>
-<link href="css/parks.css" rel="stylesheet">
+<link href="css/admin-style.css" rel="stylesheet">
 
 </head>
 <body>

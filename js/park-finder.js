@@ -2,7 +2,7 @@ $(document).ready(function () {
 	// Create an object that holds options for the GMap
 	var gmapOptions = {
 		center : new google.maps.LatLng(45.423494,-75.697933)
-		, zoom : 14
+		, zoom : 12
 		, mapTypeId: google.maps.MapTypeId.SATELLITE
 	};
 
@@ -20,7 +20,7 @@ $(document).ready(function () {
 		// Create some HTML content for the info window
 		// Style the content in your CSS
 		var info = '<div class="info-window">'
-			+ '<strong>' + park + '</strong>'
+			+ '<strong><p>' + park + '</p></strong>'
 			+ '</div>'
 		;
 

@@ -15,16 +15,16 @@ $results = $db->query('
 <head>
 <meta charset="utf-8">
 <title><?php if (isset($title)) { echo $title . ' � '; } ?>Comunity Gardens</title>
-<link href="css/parks.css" rel="stylesheet">
+<link href="css/admin-style.css" rel="stylesheet">
 
 <script src="js/modernizr.dev.js"></script>
 </head>
 
 <body>
-
-	<ul id="list">
-
 	<a href="add.php">Add a Comunity Garden!</a>
+
+    
+    <ul id="list">
 	
 		<?php
 			foreach ($results as $park) :?>
@@ -37,6 +37,8 @@ $results = $db->query('
 			</li>
 		<?php endforeach; ?>
 	</ul>
-	<p><a href="../index.php">Back to Home Area</a></p>
+
+
+<p><a href="../index.php">Back to Home Area</a></p>
 </body>
 </html>

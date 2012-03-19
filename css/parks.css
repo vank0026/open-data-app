@@ -67,6 +67,12 @@ h1 {
 	margin-right:2em;
 }
 
+.rate {
+	text-decoration:none;
+	color:#390;
+
+}
+
 #list li {
 	padding-bottom:6px;
 }
@@ -80,5 +86,3 @@ h1 {
 	margin:3%;
 }
 
-.info-window {
-}

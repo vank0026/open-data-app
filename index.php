@@ -29,15 +29,16 @@ $results = $db->query('
 
 <ul id="list">
   <?php foreach ($results as $park) :?>
-			<li itemscope itemtype="http://schema.org/TouristAttraction">
             
                 <div class="ratings">
-                    <span value="1"><a href="1">★</span>
-                    <span value="2"><a href="2">★</span>
-                    <span value="3"><a href="3">★</span>
-                    <span value="4"><a href="4">★</span>
-                    <span value="5"><a href="5">★</span>
+                    <a class="rate" href="">★</a>
+                    <a class="rate" href="">★</a>
+                    <a class="rate" href="">★</a>
+                    <a class="rate" href="">★</a>
+                    <a class="rate" href="">★</a>
                 </div>
+                
+			<li itemscope itemtype="http://schema.org/TouristAttraction">
             
 				<a href="single.php?id=<?php echo $park['id']; ?>"><?php echo $park['park_name']; ?></a>
 				<span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">

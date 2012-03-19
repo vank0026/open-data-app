@@ -76,7 +76,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <head>
 <meta charset="utf-8">
 <title>Edit the Comunity Garden</title>
-<link href="css/parks.css" rel="stylesheet">
+<link href="css/admin-style.css" rel="stylesheet">
 
 </head>
 <body>
@@ -100,6 +100,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	</div>
 	<button type="submit">Save to List</button>
 </form>
-
+<p><a href="index.php">Back to Admin Area</a></p>
 </body>
 </html>
