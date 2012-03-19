@@ -2,8 +2,8 @@ $(document).ready(function () {
 	// Create an object that holds options for the GMap
 	var gmapOptions = {
 		center : new google.maps.LatLng(45.423494,-75.697933)
-		, zoom : 13
-		, mapTypeId: google.maps.MapTypeId.ROADMAP
+		, zoom : 14
+		, mapTypeId: google.maps.MapTypeId.SATELLITE
 	};
 
 	// Create a variable to hold the GMap and add the GMap to the page
@@ -13,27 +13,27 @@ $(document).ready(function () {
 	var infoWindow;
 
 	// Loop through all the places and add a marker to the GMap
-	$('.dinos li').each(function (i, elem) {
-		var dino = $(this).find('a').html();
+	$('#list li').each(function (i, elem) {
+		var park = $(this).find('a').html();
 
 		// Create some HTML content for the info window
 		// Style the content in your CSS
 		var info = '<div class="info-window">'
-			+ '<strong>' + dino + '</strong>'
+			+ '<strong>' + park + '</strong>'
 			+ '</div>'
 		;
 
 		// Determine this dino's latitude and longitude
-		var lat = $(this).find('meta[itemprop="latitude"]').attr('content');
-		var lng = $(this).find('meta[itemprop="longitude"]').attr('content');
+		var latitude = $(this).find('meta[itemprop="latitude"]').attr('content');
+		var longitude = $(this).find('meta[itemprop="longitude"]').attr('content');
 		var pos = new google.maps.LatLng(lat, lng);
 
 		// Create a marker object for this dinosaur
 		var marker = new google.maps.Marker({
 			position : pos
 			, map : map
-			, title : dino
-			, icon : 'images/bone.png'
+			, title : parks
+			, icon : 'images/google-icon.png'
 			, animation: google.maps.Animation.DROP
 		});
 

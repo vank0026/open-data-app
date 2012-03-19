@@ -17,14 +17,17 @@ $results = $db->query('
 <html>
 <head>
 <meta charset="utf-8">
-<title><?php if (isset($title)) { echo $title . ' � '; } ?>Parks</title>
+<title><?php if (isset($title)) { echo $title . ' � '; } ?>Comunity Gardens</title>
+<link href="css/parks.css" rel="stylesheet">
 <script src="js/modernizr.dev.js"></script>
 
 </head>
 
 <body>
 
-	<ul>
+	<h1>Comunity Gardens List</h1>
+
+	<ul id="list">
 	
 		<?php foreach ($results as $park) :?>
 			<li itemscope itemtype="http://schema.org/TouristAttraction">
@@ -38,7 +41,7 @@ $results = $db->query('
 		<?php endforeach; ?>
 	</ul>
 
-	<p><a href="admin/index.php">Admin Section</a></p>
+	<p id="adminlink"><a href="admin/index.php">Admin Section</a></p>
 	
 <div id="map"></div>
 	

@@ -14,15 +14,15 @@ $results = $db->query('
 <html>
 <head>
 <meta charset="utf-8">
-<title><?php if (isset($title)) { echo $title . ' � '; } ?>Parks</title>
+<title><?php if (isset($title)) { echo $title . ' � '; } ?>Comunity Gardens</title>
 <script src="js/modernizr.dev.js"></script>
 </head>
 
 <body>
 
-	<ul>
+	<ul id="list">
 
-	<a href="add.php">Add a Park!</a>
+	<a href="add.php">Add a Comunity Garden!</a>
 	
 		<?php
 			foreach ($results as $park) :?>

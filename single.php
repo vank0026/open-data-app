@@ -39,16 +39,22 @@ if (empty($results)) {
 <head>
 <meta charset="utf-8">
 <title><?php echo $results['park_name']; ?> | Park</title>
-
+<link href="css/parks.css" rel="stylesheet">
 
 </head>
 <body>
+	<h1>Comunity Gardens List</h1>
 
-		<h1><?php echo $results['park_name']; ?></h1>
+	<div id="list">
+		<h2><?php echo $results['park_name']; ?></h2>
 		<p>Longitude: <?php  echo $results['longitude']; ?></p>
 		<p>Latitude: <?php  echo $results['latitude']; ?></p>
 		<p>Address: <?php  echo $results['address']; ?></p>
 		<a href="index.php">Home</a>
+	</div>
+<div id="map"></div>
+<?php
 
-</body>
-</html>
+include 'includes/theme-bottom.php';
+
+?>

@@ -1,0 +1,41 @@
+html{
+	background-color:#DEE9ED;
+}
+
+body {
+	background-color:#FFF;
+	
+	width:1200px;
+	height:800px;
+	
+	margin:2em auto;
+}
+
+h1 {
+	padding-top:1em;
+	margin-left:2em;
+}
+
+#adminlink {
+	bottom: 0;
+	position: absolute;
+	left: 0;
+}
+
+#list {
+	display:inline-block;
+	float:left;
+
+	width:40%;
+	margin:2.5%;
+
+}
+
+#map {
+	display:inline-block;
+	float:right;
+	
+	width:45%;
+	height:80%;
+	margin:2.5%;
+}
