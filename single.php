@@ -38,23 +38,36 @@ if (empty($results)) {
 <html>
 <head>
 <meta charset="utf-8">
-<title><?php echo $results['park_name']; ?> | Park</title>
-<link href="css/admin-style.css" rel="stylesheet">
+<title><?php echo $results['park_name']; ?></title>
+<link href="css/parks.css" rel="stylesheet">
 
 </head>
 <body>
-	<h1>Comunity Gardens List</h1>
-
 	<div id="list">
+            
 		<h2><?php echo $results['park_name']; ?></h2>
+                <p class="ratings">
+                    Rating:
+                    <a class="rate" href="">★</a>
+                    <a class="rate" href="">★</a>
+                    <a class="rate" href="">★</a>
+                    <a class="rate" href="">★</a>
+                    <a class="rate" href="">★</a>
+                </p>
+                
+
+
 		<p>Longitude: <?php  echo $results['longitude']; ?></p>
 		<p>Latitude: <?php  echo $results['latitude']; ?></p>
 		<p>Address: <?php  echo $results['address']; ?></p>
+        
 		<a href="index.php">Home</a>
 	</div>
+    
 <div id="map"></div>
-<?php
 
-include 'includes/theme-bottom.php';
-
-?>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCOSF6EUJHi28FLeCSkKsQsG1gtn4vRkN4&sensor=false"></script>
+	<script src="js/park-finder.js"></script>
+</body>
+</html>

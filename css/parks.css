@@ -33,7 +33,7 @@ h1 {
 	position: absolute;
 	left: 0;
 
-	padding:.5em 1em;;
+	padding:.8em 1.5em;;
 	margin:1em;
 
 	-webkit-border-radius: 8px;
@@ -46,7 +46,7 @@ h1 {
 }
 
 #list {
-	font-size:12px;
+	font-size:14px;
 	
 	display:inline-block;
 	float:left;
@@ -63,7 +63,6 @@ h1 {
 }
 
 .ratings {
-	float:left;
 	margin-right:2em;
 }
 

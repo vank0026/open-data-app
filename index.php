@@ -29,15 +29,6 @@ $results = $db->query('
 
 <ul id="list">
   <?php foreach ($results as $park) :?>
-            
-                <div class="ratings">
-                    <a class="rate" href="">★</a>
-                    <a class="rate" href="">★</a>
-                    <a class="rate" href="">★</a>
-                    <a class="rate" href="">★</a>
-                    <a class="rate" href="">★</a>
-                </div>
-                
 			<li itemscope itemtype="http://schema.org/TouristAttraction">
             
 				<a href="single.php?id=<?php echo $park['id']; ?>"><?php echo $park['park_name']; ?></a>
@@ -52,8 +43,9 @@ $results = $db->query('
 	
 <div id="map"></div>
 	
-<?php
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCOSF6EUJHi28FLeCSkKsQsG1gtn4vRkN4&sensor=false"></script>
+   	<script src="js/park-finder.js"></script>
 
-include 'includes/theme-bottom.php';
-
-?>
+</body>
+</html>

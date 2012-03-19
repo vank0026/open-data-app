@@ -15,12 +15,12 @@ $(document).ready(function () {
 	// Loop through all the places and add a marker to the GMap
 	$('#list li').each(function (i, elem) {
 		var park = $(this).find('a').html();
-
+		var linky = $(this).find('id').html();
 		
 		// Create some HTML content for the info window
 		// Style the content in your CSS
 		var info = '<div class="info-window">'
-			+ '<strong><p>' + park + '</p></strong>'
+			+ '<strong>' + park + '</strong>'
 			+ '</div>'
 		;
 
