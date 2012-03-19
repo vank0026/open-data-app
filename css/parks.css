@@ -26,13 +26,18 @@ h1 {
 }
 
 #adminlink {
+	background-color:#FFF;
+
 	bottom: 0;
 	position: absolute;
 	left: 0;
 
-	-webkit-border-radius: 15px;
-	-moz-border-radius: 15px;
-	border-radius: 15px; 
+	padding:.5em 1em;;
+	margin:1em;
+
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px; 
 	
 	-webkit-box-shadow: inset 0px 0px 5px 5px #999;
 	-moz-box-shadow: inset 0px 0px 5px 5px #999;

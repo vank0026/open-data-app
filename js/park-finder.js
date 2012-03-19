@@ -24,8 +24,8 @@ $(document).ready(function () {
 		;
 
 		// Determine this dino's latitude and longitude
-		var latitude = $(this).find('meta[itemprop="latitude"]').attr('content');
-		var longitude = $(this).find('meta[itemprop="longitude"]').attr('content');
+		var lat = $(this).find('meta[itemprop="latitude"]').attr('content');
+		var lng = $(this).find('meta[itemprop="longitude"]').attr('content');
 		var pos = new google.maps.LatLng(lat, lng);
 
 		// Create a marker object for this dinosaur
