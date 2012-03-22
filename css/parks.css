@@ -23,18 +23,18 @@ body {
 
 h1 {
 	padding-top:1em;
-	margin-left:2em;
+	margin-left:1em;
 }
 
 #adminlink {
 	background-color:#FFF;
 
-	bottom: 0;
-	position: absolute;
-	left: 0;
+	top: 0;
+	position: fixed;
+	right: 0;
 
 	padding:.8em 1.5em;;
-	margin:1em;
+	margin:2em;
 
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
@@ -62,14 +62,56 @@ h1 {
 	list-style-type:none;
 }
 
-.ratings {
-	margin-right:2em;
+.list li meter {
+display: inline-block;
+height: 0;
+margin: 0;
+padding: 0;
+width: 0;
+
+-webkit-appearance: none;
+appearance: none;
 }
 
-.rate {
-	text-decoration:none;
-	color:#390;
 
+
+.rater {
+display: inline-block;
+margin: 0;
+padding: 0;
+vertical-align: middle;
+
+list-style-type: none;
+line-height: 1;
+}
+
+.rater-level {
+float: left;
+
+color: #efecd2;
+}
+
+.rater-level a,
+.rater-level a:link,
+.rater-level a:visited {
+color: #efecd2;
+text-decoration: none
+}
+
+.rater-level a:hover,
+.rater-level a:focus,
+.rater-level a:active,
+.is-rated,
+.is-rated a,
+.is-rated a:link,
+.is-rated a:visited,
+.is-rated a:hover,
+.is-rated a:focus,
+.is-rated a:active,
+.is-rated-hover a,
+.is-rated-hover a:link,
+.is-rated-hover a:visited {
+color: #ffe91f;
 }
 
 #list li {

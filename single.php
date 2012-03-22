@@ -15,7 +15,7 @@ require_once 'includes/db.php';
 
 		// 	prepare() allows execution of sql commands with user input
 $sql = $db->prepare('
-SELECT id, park_name, longitude, latitude, address
+SELECT id, park_name, longitude, latitude, address, rate_count, rate_total
 FROM parks
 WHERE id = :id
 ');
@@ -27,12 +27,20 @@ $sql->execute();
 // get the results and stores them in a variable ($results) - fetch gets a single result, fetch all gets all possible results
 $results = $sql->fetch();
 
-if (empty($results)) {
+if (empty($parks)) {
 	header('Location: index.php');	// this is if there is no page
 	exit;	//stop the PHP right here and immediately redirect the user, ONLY connect to the database if there is a statement to tmake
 }
 
-?>		
+if ($parks['rate_count'] > 0) {
+	$rating = round($parks['rate_total'] / $parks['rate_count']);
+	} else {
+	$rating = 0;
+	}
+
+$cookie = get_rate_cookie();
+
+?>
 
 <!DOCTYPE HTML>
 <html>
@@ -46,16 +54,8 @@ if (empty($results)) {
 	<div id="list">
             
 		<h2><?php echo $results['park_name']; ?></h2>
-                <p class="ratings">
-                    Rating:
-                    <a class="rate" href="">★</a>
-                    <a class="rate" href="">★</a>
-                    <a class="rate" href="">★</a>
-                    <a class="rate" href="">★</a>
-                    <a class="rate" href="">★</a>
-                </p>
-                
 
+		<p>Average Park Rating:<meter value="<?php echo $rating; ?>" min="0" max="5"><?php echo $rating; ?> out of 5</meter></p>
 
 		<p>Longitude: <?php  echo $results['longitude']; ?></p>
 		<p>Latitude: <?php  echo $results['latitude']; ?></p>
@@ -64,7 +64,27 @@ if (empty($results)) {
 		<a href="index.php">Home</a>
 	</div>
     
-<div id="map"></div>
+    <?php if (isset($cookie[$id])) : ?>
+
+<h2>You Have Rated This Park:</h2>
+    <ol class="rater rater-usable">
+		<?php for ($i = 1; $i <= 5; $i++) : ?>
+        <?php $class = ($i <= $cookie[$id]) ? 'is-rated' : ''; ?>
+            <li class="rater-level <?php echo $class; ?>">★</li>
+        <?php endfor; ?>
+    </ol>
+
+<?php else : ?>
+
+<h2>Rate This Park:</h2>
+    <ol class="rater rater-usable">
+    <?php for ($i = 1; $i <= 5; $i++) : ?>
+        <li class="rater-level"><a href="rate.php?id=<?php echo $parks['id']; ?>&rate=<?php echo $i; ?>">★</a></li>
+    <?php endfor; ?>
+    </ol>
+
+<?php endif; ?>
+    
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCOSF6EUJHi28FLeCSkKsQsG1gtn4vRkN4&sensor=false"></script>
