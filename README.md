@@ -1,4 +1,4 @@
-# Open Data App
+# Homework 7
 
-An open data application with data representing the Comunty Gardens in Ottawa.
+finding locations Lat and Long with Google Maps
 
