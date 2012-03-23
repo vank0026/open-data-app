@@ -39,7 +39,7 @@ $results = $db->query('
         ?>
   
   
-			<li itemscope itemtype="http://schema.org/TouristAttraction">
+			<li itemscope itemtype="http://schema.org/TouristAttraction" data-id=<?php echo $park['id']; ?>>
             
   			<!-- list of parks here -->
             

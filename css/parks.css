@@ -60,21 +60,36 @@ h1 {
 	overflow-y:scroll;
 	list-style-type:none;
 }
+#list li {
+	padding:2px;
 
+}
+
+#list li a {
+	text-decoration: none;
+}
+
+#list li:hover {
+	color:#6FF;
+	background-color:#C6DDD3;
+
+}
 
 .rater {
 display: inline-block;
 margin: 0;
 padding: 0;
 vertical-align: middle;
+text-align:right;
 
 list-style-type: none;
 line-height: 1;
+
+
 }
 
 .rater-level {
 float: left;
-
 color: #efecd2;
 }
 
@@ -101,19 +116,6 @@ text-decoration: none
 color: #ffe91f;
 }
 
-#list li {
-	padding:2px;
-}
-
-#list li a {
-	text-decoration: none;
-}
-
-#list li a:hover {
-	color:#6FF;
-	background-color:#060;
-
-}
 
 #map {
 	display:inline-block;
