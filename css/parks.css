@@ -49,30 +49,17 @@ h1 {
 	font-size:14px;
 	
 	display:inline-block;
-	float:left;
+	float:right;
 
 	width:44%;
 	height:75%;
 	margin:3%;
-	margin-right:0;
 	
 	padding:0;
 	
 	overflow-y:scroll;
 	list-style-type:none;
 }
-
-.list li meter {
-display: inline-block;
-height: 0;
-margin: 0;
-padding: 0;
-width: 0;
-
--webkit-appearance: none;
-appearance: none;
-}
-
 
 
 .rater {
@@ -115,15 +102,29 @@ color: #ffe91f;
 }
 
 #list li {
-	padding-bottom:6px;
+	padding:2px;
+}
+
+#list li a {
+	text-decoration: none;
+}
+
+#list li a:hover {
+	color:#6FF;
+	background-color:#060;
+
 }
 
 #map {
 	display:inline-block;
-	float:right;
+	float:left;
 	
 	width:45%;
 	height:75%;
 	margin:3%;
+	margin-right:0;
 }
 
+.info-window strong {
+	display: block;
+}
