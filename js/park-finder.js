@@ -1,8 +1,10 @@
 $(document).ready(function () {
 	// Create an object that holds options for the GMap
+	// instructions at https://developers.google.com/maps/documentation/javascript/reference
 	var gmapOptions = {
 		center : new google.maps.LatLng(45.423494,-75.697933)
 		, zoom : 12
+		,disableDefaultUI: true
 		, mapTypeId: google.maps.MapTypeId.SATELLITE
 	};
 

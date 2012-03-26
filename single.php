@@ -72,25 +72,25 @@ $cookie = get_rate_cookie();
     
     <?php if (isset($cookie[$id])) : ?>
 
-<h2>You Have Rated This Park:</h2>
-    <ol class="rater rater-usable">
-		<?php for ($i = 1; $i <= 5; $i++) : ?>
-        <?php $class = ($i <= $cookie[$id]) ? 'is-rated' : ''; ?>
-            <li class="rater-level <?php echo $class; ?>">★</li>
-        <?php endfor; ?>
-    </ol>
-        <p><a href="index.php">Return Home</a></p>
-
-<?php else : ?>
-
-<h2>Rate This Park:</h2>
-    <ol class="rater rater-usable">
-    <?php for ($i = 1; $i <= 5; $i++) : ?>
-        <li class="rater-level"><a href="rate.php?id=<?php echo $results['id']; ?>&rate=<?php echo $i; ?>">★</a></li>
-    <?php endfor; ?>
-    </ol>
-        <p><a href="index.php">Return Home Without Rating</a></p>
-<?php endif; ?>
+        <h2>You Have Rated This Park:</h2>
+            <ol class="rater rater-usable">
+                <?php for ($i = 1; $i <= 5; $i++) : ?>
+                <?php $class = ($i <= $cookie[$id]) ? 'is-rated' : ''; ?>
+                    <li class="rater-level <?php echo $class; ?>">★</li>
+                <?php endfor; ?>
+            </ol>
+                <p><a href="index.php">Return Home</a></p>
+        
+        <?php else : ?>
+        
+        <h2>Rate This Park:</h2>
+            <ol class="rater rater-usable">
+            <?php for ($i = 1; $i <= 5; $i++) : ?>
+                <li class="rater-level"><a href="rate.php?id=<?php echo $results['id']; ?>&rate=<?php echo $i; ?>">★</a></li>
+            <?php endfor; ?>
+            </ol>
+                <p><a href="index.php">Return Home Without Rating</a></p>
+        <?php endif; ?>
     
 	</div>
 
