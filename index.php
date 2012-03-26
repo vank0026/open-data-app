@@ -5,7 +5,7 @@ require_once 'includes/db.php';
 //	the query thing allows us to perform SQL the database, and get something back
 
 $results = $db->query('
-	SELECT id, park_name, longitude, latitude, address
+	SELECT id, park_name, longitude, latitude, address, rate_count, rate_total
 	FROM parks 
 	ORDER BY park_name ASC');
 		// the tabs above are for easier usage, not needed for funcitonality
@@ -29,12 +29,35 @@ $results = $db->query('
 
 <ul id="list">
   <?php foreach ($results as $park) :?>
-			<li itemscope itemtype="http://schema.org/TouristAttraction">
+  
+		<?php
+            if ($park['rate_count'] > 0) {
+            $rating = round($park['rate_total'] / $park['rate_count']);
+            } else {
+            $rating = 0;
+            }
+        ?>
+  
+  
+			<li itemscope itemtype="http://schema.org/TouristAttraction" data-id=<?php echo $park['id']; ?>>
             
-				<a href="single.php?id=<?php echo $park['id']; ?>"><?php echo $park['park_name']; ?></a>
+  			<!-- list of parks here -->
+            
+				<a href="single.php?id=<?php echo $park['id']; ?>" itemprop="name"><?php echo $park['park_name']; ?></a>
+                
 				<span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
-				<meta itemprop="longitude" content="<?php echo $park['longitude']; ?>">
-				<meta itemprop="latitude" content="<?php echo $park['latitude']; ?>">
+                    <meta itemprop="longitude" content="<?php echo $park['longitude']; ?>">
+                    <meta itemprop="latitude" content="<?php echo $park['latitude']; ?>">
+                </span>
+                
+                <!-- ratings sections here -->
+                
+                    <ol class="rater">
+                        <?php for ($i = 1; $i <= 5; $i++) : ?>
+                        <?php $class = ($i <= $rating) ? 'is-rated' : ''; ?>
+                            <li class="rater-level <?php echo $class; ?>">★</li>
+                        <?php endfor; ?>
+                    </ol>
 			</li>
 		<?php endforeach; ?>
 	</ul>

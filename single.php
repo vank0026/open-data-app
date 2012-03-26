@@ -1,7 +1,11 @@
 <?php
 
 require_once 'includes/filter-wrapper.php';
+require_once 'includes/functions.php';
+
+
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+
 if (empty($id)) {
 	header('Location: index.php');	// this is if there is no page
 	exit;	//stop the PHP right here and immediately redirect the user, ONLY connect to the database if there is a statement to tmake
@@ -15,7 +19,7 @@ require_once 'includes/db.php';
 
 		// 	prepare() allows execution of sql commands with user input
 $sql = $db->prepare('
-SELECT id, park_name, longitude, latitude, address
+SELECT id, park_name, longitude, latitude, address, rate_count, rate_total
 FROM parks
 WHERE id = :id
 ');
@@ -32,7 +36,15 @@ if (empty($results)) {
 	exit;	//stop the PHP right here and immediately redirect the user, ONLY connect to the database if there is a statement to tmake
 }
 
-?>		
+if ($results['rate_count'] > 0) {
+	$rating = round($results['rate_total'] / $results['rate_count']);
+	} else {
+	$rating = 0;
+	}
+
+$cookie = get_rate_cookie();
+
+?>
 
 <!DOCTYPE HTML>
 <html>
@@ -43,27 +55,45 @@ if (empty($results)) {
 
 </head>
 <body>
-	<div id="list">
-            
+	<h1>Comunity Gardens List</h1>
+		<div id="list">
 		<h2><?php echo $results['park_name']; ?></h2>
-                <p class="ratings">
-                    Rating:
-                    <a class="rate" href="">★</a>
-                    <a class="rate" href="">★</a>
-                    <a class="rate" href="">★</a>
-                    <a class="rate" href="">★</a>
-                    <a class="rate" href="">★</a>
-                </p>
-                
 
-
+		<p>Average Park Rating:<meter value="<?php echo $rating; ?>" min="0" max="5"><?php echo $rating; ?> out of 5</meter></p>
 		<p>Longitude: <?php  echo $results['longitude']; ?></p>
 		<p>Latitude: <?php  echo $results['latitude']; ?></p>
 		<p>Address: <?php  echo $results['address']; ?></p>
         
-		<a href="index.php">Home</a>
-	</div>
+				<span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+                    <meta itemprop="longitude" content="<?php echo $results['longitude']; ?>">
+                    <meta itemprop="latitude" content="<?php echo $results['latitude']; ?>">
+                </span>
+        
     
+    <?php if (isset($cookie[$id])) : ?>
+
+<h2>You Have Rated This Park:</h2>
+    <ol class="rater rater-usable">
+		<?php for ($i = 1; $i <= 5; $i++) : ?>
+        <?php $class = ($i <= $cookie[$id]) ? 'is-rated' : ''; ?>
+            <li class="rater-level <?php echo $class; ?>">★</li>
+        <?php endfor; ?>
+    </ol>
+        <p><a href="index.php">Return Home</a></p>
+
+<?php else : ?>
+
+<h2>Rate This Park:</h2>
+    <ol class="rater rater-usable">
+    <?php for ($i = 1; $i <= 5; $i++) : ?>
+        <li class="rater-level"><a href="rate.php?id=<?php echo $results['id']; ?>&rate=<?php echo $i; ?>">★</a></li>
+    <?php endfor; ?>
+    </ol>
+        <p><a href="index.php">Return Home Without Rating</a></p>
+<?php endif; ?>
+    
+	</div>
+
 <div id="map"></div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>

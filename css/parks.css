@@ -23,18 +23,18 @@ body {
 
 h1 {
 	padding-top:1em;
-	margin-left:2em;
+	margin-left:1em;
 }
 
 #adminlink {
 	background-color:#FFF;
 
-	bottom: 0;
-	position: absolute;
-	left: 0;
+	top: 0;
+	position: fixed;
+	right: 0;
 
 	padding:.8em 1.5em;;
-	margin:1em;
+	margin:2em;
 
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
@@ -49,39 +49,84 @@ h1 {
 	font-size:14px;
 	
 	display:inline-block;
-	float:left;
+	float:right;
 
 	width:44%;
 	height:75%;
 	margin:3%;
-	margin-right:0;
 	
 	padding:0;
 	
 	overflow-y:scroll;
 	list-style-type:none;
 }
-
-.ratings {
-	margin-right:2em;
-}
-
-.rate {
-	text-decoration:none;
-	color:#390;
-
-}
-
 #list li {
-	padding-bottom:6px;
+	padding:2px;
+
 }
+
+#list li a {
+	text-decoration: none;
+}
+
+#list li:hover {
+	color:#6FF;
+	background-color:#C6DDD3;
+
+}
+
+.rater {
+display: inline-block;
+margin: 0;
+padding: 0;
+vertical-align: middle;
+text-align:right;
+
+list-style-type: none;
+line-height: 1;
+
+
+}
+
+.rater-level {
+float: left;
+color: #efecd2;
+}
+
+.rater-level a,
+.rater-level a:link,
+.rater-level a:visited {
+color: #efecd2;
+text-decoration: none
+}
+
+.rater-level a:hover,
+.rater-level a:focus,
+.rater-level a:active,
+.is-rated,
+.is-rated a,
+.is-rated a:link,
+.is-rated a:visited,
+.is-rated a:hover,
+.is-rated a:focus,
+.is-rated a:active,
+.is-rated-hover a,
+.is-rated-hover a:link,
+.is-rated-hover a:visited {
+color: #ffe91f;
+}
+
 
 #map {
 	display:inline-block;
-	float:right;
+	float:left;
 	
 	width:45%;
 	height:75%;
 	margin:3%;
+	margin-right:0;
 }
 
+.info-window strong {
+	display: block;
+}

@@ -13,16 +13,16 @@ $(document).ready(function () {
 	var infoWindow;
 
 	// Loop through all the places and add a marker to the GMap
-	$('#list li').each(function (i, elem) {
+	$('#list > li').each(function (i, elem) {
 		var park = $(this).find('a').html();
-		var linky = $(this).find('id').html();
 		
 		// Create some HTML content for the info window
 		// Style the content in your CSS
 		var info = '<div class="info-window">'
-			+ '<strong>' + park + '</strong>'
+			+ '<strong>' + park + ' </strong>'
+			+ '<a href="single.php?id=' + $(this).attr('data-id') + '">Rate This Garden!</a>'
 			+ '</div>'
-		;
+			;
 
 		// Determine this park's latitude and longitude
 		var lat = $(this).find('meta[itemprop="latitude"]').attr('content');
@@ -62,4 +62,23 @@ $(document).ready(function () {
 		// Add a click event listener to the list item
 		google.maps.event.addDomListener($(this).children('a').get(0), 'click', showInfoWindow);
 	});
+	
+	// STARS rating here!	************************************
+	
+	var $raterLi = $('.rater-usable li');
+	
+	// Makes all the lower ratings highlight when hovering over a star
+				$raterLi
+				.on('mouseenter', function (ev) {
+			var current = $(this).index();
+			
+			for (var i = 0; i < current; i++) {
+				$raterLi.eq(i).addClass('is-rated-hover');
+				}
+			})
+		.on('mouseleave', function (ev) {
+		$raterLi.removeClass('is-rated-hover');
+	})
+;
+	
 });
