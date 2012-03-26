@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    margin: 10px 13px 10px 13px;
+}
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+@media screen and (min-width: 768px) {
+    body {
+        width: 748px;
+        margin:10px auto;
+    }
+}
+</style>
+<title>User Authentication</title>
+</head>
+<body>
+<h1>User Authentication</h1>
+
+<p>User authentication is the process of comparing credentials for validity. Often this process takes the form of comparing a username and password entered in an HTML form with a username and password stored in a database.</p>
+
+<p>There are many security concerns with user authentication, including: securing passwords, <a href="http://en.wikipedia.org/wiki/Session_hijacking">session hijacking</a>, securing cookies, <a href="http://en.wikipedia.org/wiki/Code_injection">injection attacks</a>, <a href="http://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a>, etc.</p>
+
+<h2>Authentication Process Overview</h2>
+
+<ol>
+<li>User fills in a username and password in an HTML form.</li>
+<li>User submits the form to a PHP script.</li>
+<li>The PHP script validates that a username and password were entered.</li>
+<li>The PHP script compares the username and password against those stored in a database.</li>
+<li>If the username and password match, PHP creates a session to remember the user.</li>
+<li>Every time a secure page is loaded, the session is checked to make sure it is still valid.</li>
+</ol>
+
+
+<h2>Password Security, Hashing &amp; Salting</h2>
+
+<p>Passwords should always be stored in a database using a one-way encryption mechanism called hashing. The password is converted to a series of bits that are extremely difficult to turn back into the original password.</p>
+
+<p>A password hash would look something like this: <code>f7f8249717ab21078a82d61e46b8a8625e67b8b1</code></p>
+
+<p>Salting is the process of adding some extra random pieces into the hash to make the password more unique and to throw off hackers. Adding a unique random salt to each password is very helpful in stopping rainbow table attacks.</p>
+
+<p>The current best practice for hashing passwords is to use Bcrypt. And, if you&rsquo;d like, with the addition of an extra shared application key and HMAC.</p>
+
+<p><em>If your password is ever e-mailed to you that means the developer isn’t storing your password securely in the database.</em></p>
+
+<p><strong>Some user authentication hacking vectors include: <a href="http://en.wikipedia.org/wiki/Rainbow_table">rainbow tables</a>, <a href="http://en.wikipedia.org/wiki/Brute-force_attack">brute force</a>, <a href="http://en.wikipedia.org/wiki/Denial-of-service_attack">DoS attacks</a>, <a href="http://en.wikipedia.org/wiki/Session_hijacking">session hijacking</a> and many more.</strong></p>
+
+<h2>Resources &amp; Tutorials</h2>
+
+<h3>User Authentication</h3>
+
+<ul>
+<li><a href="http://tinsology.net/2009/06/creating-a-secure-login-system-the-right-way/">Tinsology: Creating a secure login system the right way</a></li>
+<li><a href="http://net.tutsplus.com/articles/news/how-to-build-a-login-system-for-a-simple-website/">NetTuts+: How to build a login system for a simple website</a></li>
+<li><a href="http://net.tutsplus.com/tutorials/php/a-better-login-system/">NetTuts+: A better login system</a></li>
+<li><a href="http://www.amazon.ca/PHP-MySQL-Development-Luke-Welling/dp/0672329166/">PHP and MySQL Web Development: Chapter 17, 27</a></li>
+</ul>
+
+
+<h3>Security</h3>
+
+<ul>
+<li><a href="http://www.amazon.ca/dp/059600656X/">Essential PHP Security</a></li>
+<li><a href="http://phpsec.org/projects/guide/">PHP Security</a></li>
+<li><a href="http://www.amazon.ca/dp/0672329166/">PHP and MySQL Web Development: Chapter 16</a></li>
+<li><a href="http://www.amazon.ca/dp/1430232498/">PHP Solutions: Dynamic Web Design Made Easy: Chapter 15</a></li>
+</ul>
+
+
+<h3>Password Hashing &amp; Salting</h3>
+
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Cryptographic_hash_function">Wikipedia: Cryptographic hash function</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Hmac">Wikipedia: HMAC</a></li>
+<li><a href="http://www.alistapart.com/articles/web-cryptography-salted-hash-and-other-tasty-dishes/">A List Apart: Web cryptography: salted hash and other tasty dishes</a></li>
+<li><a href="http://benlog.com/articles/2008/06/19/dont-hash-secrets/"><strong>Benlog: Don’t hash secrets</strong></a></li>
+<li><a href="http://net.tutsplus.com/tutorials/php/simple-techniques-to-lock-down-your-website/">NetTuts+: Simple techniques to lock down your website</a></li>
+<li><a href="http://net.tutsplus.com/tutorials/php/understanding-hash-functions-and-keeping-passwords-safe/">NetTuts+: Understanding hash functions and keeping passwords safe</a></li>
+</ul>
+
+</body>
+</html>

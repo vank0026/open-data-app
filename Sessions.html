@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    margin: 10px 13px 10px 13px;
+}
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+@media screen and (min-width: 768px) {
+    body {
+        width: 748px;
+        margin:10px auto;
+    }
+}
+</style>
+<title>Sessions</title>
+</head>
+<body>
+<h1>Sessions</h1>
+
+<p>Sessions allow us to track a user from page to page on the server. Each user/browser is assigned a unique identifier that is stored in a cookie. Every request, PHP reads the session cookie and regenerates the information stored on the server in the session variable. <em>When the user closes the browser window their session information is lost.</em></p>
+
+<p><strong><a href="http://en.wikipedia.org/wiki/Session_hijacking">Session hijacking</a> is a common security concern.</strong></p>
+
+<pre><code>&lt;?php
+// session_start() initialises the session system
+// must be called before accessing the session info
+session_start();
+
+// with the $_SESSION super global we can persist info
+// $_SESSION is an associative array
+// the stored info is available every request, on every page
+//   until the user quits the browser or we delete it
+$_SESSION['page_views'] = 1;
+
+// Use the session_destroy() function to stop using sessions
+session_destroy();
+</code></pre>
+
+<h2>Resources &amp; Tutorials</h2>
+
+<ul>
+<li><strong><a href="http://www.phpro.org/tutorials/Introduction-To-PHP-Sessions.html">PHPro: Introduction to PHP sessions</a></strong></li>
+<li><strong><a href="http://shiflett.org/articles/the-truth-about-sessions">Chris Shiflett: The truth about sessions</a></strong></li>
+<li><a href="http://php.net/manual/en/book.session.php">PHP.net: Sessions</a></li>
+<li><a href="http://www.tizag.com/phpT/phpsessions.php">Tizag: PHP Sessions</a></li>
+<li><a href="http://www.amazon.ca/PHP-Solutions-Dynamic-Design-Second/dp/1430232498/">PHP Solutions: Dynamic Web Design Made Easy: Chapter 9</a></li>
+<li><a href="http://www.amazon.ca/PHP-MySQL-Development-Luke-Welling/dp/0672329166/">PHP and MySQL Web Development: Chapter 23</a></li>
+</ul>
+
+</body>
+</html>
