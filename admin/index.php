@@ -1,5 +1,13 @@
 <?php
 
+
+require_once '../includes/users.php';
+
+if (!user_is_signed_in()){
+	header('Location: sign-in.php');
+	exit;
+}
+
 require_once '../includes/db.php';
 //	exect() allows us to perform SQL and not expect a result
 //	the query thing allows us to perform SQL the database, and get something back
@@ -38,7 +46,7 @@ $results = $db->query('
 		<?php endforeach; ?>
 	</ul>
 
+<p><a href="../admin/sign-out.php">Sign Out</a></p>
 
-<p><a href="../index.php">Back to Home Area</a></p>
 </body>
 </html>

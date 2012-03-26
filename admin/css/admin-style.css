@@ -12,14 +12,26 @@ body {
 	margin:2em auto;
 	padding:1%;
 	
-	-webkit-border-radius: 15px;
-	-moz-border-radius: 15px;
-	border-radius: 15px; 
 	
 	-webkit-box-shadow:  0px 0px 5px 5px #999;
 	-moz-box-shadow:  0px 0px 5px 5px #999;
 	box-shadow:  0px 0px 5px 5px #999; 
 	
+}
+
+.inpage {
+	width:400px;
+	height:200px;
+	
+	margin:10em auto;
+	padding:1%;
+	-webkit-box-shadow:  0px 0px 5px 5px #999;
+	-moz-box-shadow:  0px 0px 5px 5px #999;
+	box-shadow:  0px 0px 5px 5px #999; 
+}
+
+input {
+	width:100%;
 }
 
 #list {

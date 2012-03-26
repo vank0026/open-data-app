@@ -5,7 +5,7 @@ $(document).ready(function () {
 		center : new google.maps.LatLng(45.423494,-75.697933)
 		, zoom : 12
 		,disableDefaultUI: true
-		, mapTypeId: google.maps.MapTypeId.SATELLITE
+		, mapTypeId: google.maps.MapTypeId.TERRAIN
 	};
 
 	// Create a variable to hold the GMap and add the GMap to the page
@@ -40,29 +40,39 @@ $(document).ready(function () {
 			, animation: google.maps.Animation.DROP
 		});
 
+		// Add a click event listener for the marker
+		google.maps.event.addListener(marker, 'click', showInfoWindow);
+
 		// A function for showing this park's info window
 		function showInfoWindow (ev) {
+			
+			
 			if (ev.preventDefault) {
 				ev.preventDefault();
 			}
 
 			// Close the previous info window first, if one already exists
 			if (infoWindow) {
+				marker.setAnimation(null);
 				infoWindow.close();
 			}
 
+			
 			// Create an info window object and assign it the content
 			infoWindow = new google.maps.InfoWindow({
 				content : info
+				
 			});
+			
+			marker.setAnimation(google.maps.Animation.BOUNCE);
 
 			infoWindow.open(map, marker);
 		}
 
-		// Add a click event listener for the marker
-		google.maps.event.addListener(marker, 'click', showInfoWindow);
 		// Add a click event listener to the list item
 		google.maps.event.addDomListener($(this).children('a').get(0), 'click', showInfoWindow);
+		
+		
 	});
 	
 	// STARS rating here!	************************************
