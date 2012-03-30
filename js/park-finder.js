@@ -13,6 +13,8 @@ $(document).ready(function () {
 
 	// Share one info window variable for all the markers
 	var infoWindow;
+	// Use this variable to remember which marker is bouncing so we can stop it later
+	var bouncingMarker;
 
 	// Loop through all the places and add a marker to the GMap
 	$('#list > li').each(function (i, elem) {
@@ -64,7 +66,13 @@ $(document).ready(function () {
 				
 			});
 			
+			if (bouncingMarker) {
+				// https://developers.google.com/maps/documentation/javascript/overlays#MarkerAnimations
+				bouncingMarker.setAnimation(null);
+			}
+			
 			marker.setAnimation(google.maps.Animation.BOUNCE);
+			bouncingMarker = marker;
 
 			infoWindow.open(map, marker);
 		}
