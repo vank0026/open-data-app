@@ -1,7 +1,5 @@
 <?php
 
-
-
 function user_create($db, $email, $password) {
 	$hashed_password = get_hashed_password($password);
 	var_dump($hashed_password);
