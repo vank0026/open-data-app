@@ -16,5 +16,4 @@ http://opendataapp.phpfogapp.com/index.php
 
 https://github.com/vank0026/open-data-app
 
-http://ottawa.ca/online_services/opendata/info/parks_all_parkland_en.html
-
+http://ottawa.ca/online_services/opendata/info/community_gardens_en.html
