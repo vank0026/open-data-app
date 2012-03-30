@@ -17,8 +17,8 @@ html{
 body {
 	background-color:#ECF1FF;
 	
-	width:1200px;
-	height:800px;
+	width:800px;
+	height:600px;
 	
 	margin:2em auto;
 	padding:1%;
@@ -35,7 +35,7 @@ h1 {
 	color:#DEE9ED;
 	text-shadow: 0 0 4px #000;
 	
-	font-size:50px;
+	font-size:30px;
 }
 
 #adminlink a{
@@ -104,6 +104,9 @@ text-align:right;
 list-style-type: none;
 line-height: 1;
 
+	-webkit-box-shadow: inset 0px 0px 5px 5px #999;
+	-moz-box-shadow: inset 0px 0px 5px 5px #999;
+	box-shadow: inset 0px 0px 5px 5px #999; 
 
 }
 
@@ -148,7 +151,7 @@ color: #ffe91f;
 
 .info-window strong {
 	display: block;
-	font-size:12px;
+	font-size:8px;
 	
-	width:400px;
+	width:300px;
 }

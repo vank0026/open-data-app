@@ -54,6 +54,15 @@ $results = $db->query('
   
 			<li itemscope itemtype="http://schema.org/TouristAttraction" data-id=<?php echo $park['id']; ?>>
             
+                <!-- ratings sections here -->
+                
+                    <ol class="rater">
+                        <?php for ($i = 1; $i <= 5; $i++) : ?>
+                        <?php $class = ($i <= $rating) ? 'is-rated' : ''; ?>
+                            <li class="rater-level <?php echo $class; ?>">★</li>
+                        <?php endfor; ?>
+                    </ol>
+                    
   			<!-- list of parks here -->
             
 				<a href="single.php?id=<?php echo $park['id']; ?>" itemprop="name"><?php echo $park['park_name']; ?></a>
@@ -63,14 +72,6 @@ $results = $db->query('
                     <meta itemprop="latitude" content="<?php echo $park['latitude']; ?>">
                 </span>
                 
-                <!-- ratings sections here -->
-                
-                    <ol class="rater">
-                        <?php for ($i = 1; $i <= 5; $i++) : ?>
-                        <?php $class = ($i <= $rating) ? 'is-rated' : ''; ?>
-                            <li class="rater-level <?php echo $class; ?>">★</li>
-                        <?php endfor; ?>
-                    </ol>
 			</li>
 		<?php endforeach; ?>
 	</ul>

@@ -15,7 +15,7 @@ $(document).ready(function () {
 	// instructions at https://developers.google.com/maps/documentation/javascript/reference
 	var gmapOptions = {
 		center : new google.maps.LatLng(45.423494,-75.697933)
-		, zoom : 12
+		, zoom : 14
 		,disableDefaultUI: true
 		, mapTypeId: google.maps.MapTypeId.TERRAIN
 	};
