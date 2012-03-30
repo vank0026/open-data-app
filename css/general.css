@@ -1,0 +1,75 @@
+@charset "utf-8";
+/* CSS Document */
+
+html {
+	background-color:#999999;
+}
+
+body {
+	margin:1em auto;
+	padding:1em;
+	width:55em;
+	
+	background-color:#FFF;
+	color:#000;
+	text-decoration:none;
+	
+	font-family:Tahoma, Geneva, sans-serif;
+
+	-webkit-box-shadow: 0px 0px 3px 3px #666;
+	-moz-box-shadow: 0px 0px 3px 3px #666;
+	box-shadow: 0px 0px 3px 3px #666;
+
+}
+
+
+h1 {
+	margin:.5em;
+	padding:.5em;
+	
+	font-family:"Berlin Sans FB";
+
+	
+	font-size:42px;
+	text-align:center;
+	color:#fff;
+	text-shadow: 0px 0px 8px #000;
+	filter: dropshadow(color=#000000, offx=0, offy=0);
+
+	background-color:#03F;
+	border-radius:55px;
+}
+
+h2 {
+	margin:1em 3em;
+	padding:.2em;
+
+	font-family:"Berlin Sans FB";
+
+	font-size:24px;
+	text-align:center;
+	color:#FFF;
+	text-shadow: 0px 0px 8px #000;
+	filter: dropshadow(color=#000000, offx=0, offy=0);
+
+	background-color:#09F;
+	border-radius:55px;
+
+}
+
+div {
+	margin:1em;
+	padding:.2em 1em;
+	-webkit-box-shadow: 0px 0px 3px 3px #666;
+	-moz-box-shadow: 0px 0px 3px 3px #666;
+	box-shadow: 0px 0px 3px 3px #666;
+
+}
+
+ul {
+	margin-left:5em;
+}
+
+figure {
+	text-align:center;
+}
