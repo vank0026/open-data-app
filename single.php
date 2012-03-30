@@ -65,8 +65,9 @@ $cookie = get_rate_cookie();
 
 </head>
 <body>
-	<h1>Comunity Gardens List</h1>
-		<div id="list">
+	<img src="images/logo.png" alt="Community Garden Finder Logo">
+	<h1 class="garden-title">Comunity Gardens List</h1>
+		<ul id="list">
 		<h2><?php echo $results['park_name']; ?></h2>
 
 		<p>Average Park Rating:<meter value="<?php echo $rating; ?>" min="0" max="5"><?php echo $rating; ?> out of 5</meter></p>
@@ -74,11 +75,14 @@ $cookie = get_rate_cookie();
 		<p>Latitude: <?php  echo $results['latitude']; ?></p>
 		<p>Address: <?php  echo $results['address']; ?></p>
         
+        <li>
+        
 				<span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
                     <meta itemprop="longitude" content="<?php echo $results['longitude']; ?>">
                     <meta itemprop="latitude" content="<?php echo $results['latitude']; ?>">
                 </span>
         
+   		</li>
     
     <?php if (isset($cookie[$id])) : ?>
 
@@ -101,11 +105,10 @@ $cookie = get_rate_cookie();
             </ol>
                 <p><a href="index.php">Return Home Without Rating</a></p>
         <?php endif; ?>
-    
-	</div>
+	</ul>
 
 <div id="map"></div>
-
+<footer>(C)Copyright 2012 Roger van Koughnett</footer>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCOSF6EUJHi28FLeCSkKsQsG1gtn4vRkN4&sensor=false"></script>
 	<script src="js/garden-finder.js"></script>
