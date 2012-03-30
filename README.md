@@ -12,7 +12,7 @@ Version 1.0.0
 
 ------------------------------------------------------
 
-OpenDataApp.phpfogapp.com
+http://opendataapp.phpfogapp.com/index.php
 
 https://github.com/vank0026/open-data-app
 

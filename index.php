@@ -1,4 +1,15 @@
+
+
 <?php
+
+		/**
+		 *small description:  Displays the list and the map for the Open Data
+		 *
+		 *@package 
+		 *@copyright 2012 Roger van Koughnett
+		 *@author Roger van Koughnett <roger.van.koughnett@gmail.com>
+		 *@link https://github.com/vank0026/open-data-app
+		 */
 
 require_once 'includes/db.php';
 //	exect() allows us to perform SQL and not expect a result
@@ -68,7 +79,7 @@ $results = $db->query('
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCOSF6EUJHi28FLeCSkKsQsG1gtn4vRkN4&sensor=false"></script>
-   	<script src="js/park-finder.js"></script>
+   	<script src="js/garden-finder.js"></script>
 
 </body>
 </html>
