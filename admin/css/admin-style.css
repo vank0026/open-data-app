@@ -46,8 +46,19 @@ input {
 }
 
 #list {
+	font-size:14px;
+	
+	display:inline-block;
+	float:right;
+
+	width:44%;
+	height:75%;
+	margin:3%;
+	
+	padding:0;
+	
 	overflow-y:scroll;
-	height:80%;
+	list-style-type:none;
 }
 
 h1 {
