@@ -15,6 +15,7 @@
 * Or, translated:
 * id:rate;id:rate;id:rate
 */
+
 function save_rate_cookie ($id, $rate) {
 $cookie = get_rate_cookie();
 

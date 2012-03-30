@@ -1,4 +1,16 @@
 $(document).ready(function () {
+
+		/**
+		 *small description:  Displays the list and the map for the Open Data
+		 *
+		 *@package 
+		 *@copyright 2012 Roger van Koughnett
+		 *@author Roger van Koughnett <roger.van.koughnett@gmail.com>
+		 *@link https://github.com/vank0026/open-data-app
+		 *@license New BSD Licence 
+		 *@version 1.0.0
+		 */
+
 	// Create an object that holds options for the GMap
 	// instructions at https://developers.google.com/maps/documentation/javascript/reference
 	var gmapOptions = {
