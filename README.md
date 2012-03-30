@@ -1,4 +1,6 @@
-# Homework 7
+# Open Data App
 
-finding locations Lat and Long with Google Maps
+find the Comunity Gardens of Ottawa using Google Maps
+
+
 
