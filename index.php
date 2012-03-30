@@ -37,8 +37,8 @@ $results = $db->query('
 </head>
 
 <body>
-
-	<h1>Comunity Gardens List</h1>
+	<img src="images/logo.png" alt="Community Garden Finder Logo">
+	<h1 class="garden-title">Comunity Gardens List</h1>
 
 <ul id="list">
   <?php foreach ($results as $park) :?>
@@ -76,10 +76,11 @@ $results = $db->query('
 		<?php endforeach; ?>
 	</ul>
 
-<p id="adminlink"><a href="admin/index.php">Admin Section</a></p>
+<div id="adminlink"><a href="admin/index.php">Admin Section</a></div>
 	
 <div id="map"></div>
 	
+<footer>(C)Copyright 2012 Roger van Koughnett</footer>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCOSF6EUJHi28FLeCSkKsQsG1gtn4vRkN4&sensor=false"></script>
    	<script src="js/garden-finder.js"></script>

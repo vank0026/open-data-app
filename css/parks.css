@@ -15,7 +15,7 @@ html{
 }
 
 body {
-	background-color:#ECF1FF;
+	background-color:#B9C8E3;
 	
 	width:800px;
 	height:600px;
@@ -29,13 +29,14 @@ body {
 	box-shadow:  0px 0px 8px #000; 
 }
 
-h1 {
+.garden-title {
+	float:right;
 	padding-top:.2em;
-	margin-left:.8em;
+	margin-right:1.5em;
 	color:#DEE9ED;
 	text-shadow: 0 0 4px #000;
 	
-	font-size:30px;
+	font-size:45px;
 }
 
 #adminlink a{
@@ -67,7 +68,7 @@ h1 {
 	float:right;
 
 	width:44%;
-	height:75%;
+	height:70%;
 	margin:3%;
 	
 	padding:0;
@@ -144,9 +145,14 @@ color: #ffe91f;
 	float:left;
 	
 	width:45%;
-	height:75%;
+	height:70%;
 	margin:3%;
 	margin-right:0;
+
+	-webkit-box-shadow: 0px 0px 2px 2px #666;
+	-moz-box-shadow: 0px 0px 2px 2px #666;
+	box-shadow: 0px 0px 2px 2px #666; 
+
 }
 
 .info-window strong {
@@ -154,4 +160,9 @@ color: #ffe91f;
 	font-size:8px;
 	
 	width:300px;
+}
+
+footer {
+	text-align:center;
+	font-size:9px;
 }
