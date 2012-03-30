@@ -2,7 +2,7 @@
 
 find the Comunity Gardens of Ottawa using Google Maps
 
-##By Roger van Koughnett
+###By Roger van Koughnett
 roger.van.koughnett@gmail.com
 
 
