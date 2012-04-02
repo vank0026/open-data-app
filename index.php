@@ -83,7 +83,15 @@ $results = $db->query('
 <footer>(C)Copyright 2012 Roger van Koughnett</footer>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCOSF6EUJHi28FLeCSkKsQsG1gtn4vRkN4&sensor=false"></script>
-   	<script src="js/garden-finder.js"></script>
+    
+    <!-- the below is to make the js run faster, but you cannot edit the minimized js.  therefore, on localhost use regular js -->
+    
+    <?php if($_SERVER['HTTP_HOST'] == 'localhost'): ?>
+		<script src="js/garden-finder.js"></script>
+    <?php else : ?>
+		<script src="js/garden-finder.min.js"></script>
+    <?php endif; ?>
+
 
 </body>
 </html>
