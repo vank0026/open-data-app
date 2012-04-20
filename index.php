@@ -42,7 +42,6 @@ $results = $db->query('
 
 <ul id="list">
   <?php foreach ($results as $park) :?>
-  
 		<?php
             if ($park['rate_count'] > 0) {
             $rating = round($park['rate_total'] / $park['rate_count']);
@@ -50,9 +49,7 @@ $results = $db->query('
             $rating = 0;
             }
         ?>
-  
-  
-			<li itemscope itemtype="http://schema.org/TouristAttraction" data-id=<?php echo $park['id']; ?>>
+			<li class="garden-name" itemscope itemtype="http://schema.org/TouristAttraction" data-id=<?php echo $park['id']; ?>>
             
                 <!-- ratings sections here -->
                 
@@ -76,9 +73,10 @@ $results = $db->query('
 		<?php endforeach; ?>
 	</ul>
 
-<div id="adminlink"><a href="admin/index.php">Admin Section</a></div>
 	
 <div id="map"></div>
+
+<div id="adminlink"><a href="admin/index.php">Admin Section</a></div>
 	
 <footer>(C)Copyright 2012 Roger van Koughnett</footer>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
