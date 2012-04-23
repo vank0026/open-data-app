@@ -144,7 +144,7 @@ body {
 .rater-level {
 	float: left;
 	color: #efecd2;
-	text-shadow: 0 0 0 2px #000;
+	text-shadow: 0 0 2px #000;
 
 	margin:0;
 	padding:0;
@@ -171,6 +171,8 @@ body {
 .is-rated-hover a:link,
 .is-rated-hover a:visited {
 	color: #ffe91f;
+	text-shadow: 0 0 2px #000;
+
 }
 
 
