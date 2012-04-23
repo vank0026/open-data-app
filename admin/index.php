@@ -57,6 +57,7 @@ $results = $db->query('
 	</ul>
 
 <p><a href="../admin/sign-out.php">Sign Out</a></p>
+<footer>(C)Copyright 2012 Roger van Koughnett</footer>
 
 </body>
 </html>

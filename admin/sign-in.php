@@ -80,5 +80,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <button type="submit">Sign In</button>
 </form>
 </div>
+
+<footer>(C)Copyright 2012 Roger van Koughnett</footer>
+
 </body>
 </html>
