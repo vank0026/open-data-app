@@ -144,6 +144,8 @@ body {
 .rater-level {
 	float: left;
 	color: #efecd2;
+	text-shadow: 0 0 0 2px #000;
+
 	margin:0;
 	padding:0;
 }
